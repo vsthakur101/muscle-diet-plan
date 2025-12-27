@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vegetarian Muscle Building Diet Plan</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 30px;
+            background: #f8f9fa;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .stat-card h3 {
+            color: #667eea;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        
+        .stat-card p {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .section h2 {
+            color: #667eea;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+        
+        .macros-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .macro-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .macro-box h4 {
+            font-size: 0.9em;
+            margin-bottom: 5px;
+            opacity: 0.9;
+        }
+        
+        .macro-box p {
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+        
+        .plan-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .tab-button {
+            flex: 1;
+            padding: 15px;
+            background: #e9ecef;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .tab-button.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .meal-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 5px solid #667eea;
+        }
+        
+        .meal-card h3 {
+            color: #667eea;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+        }
+        
+        .meal-card ul {
+            list-style: none;
+            margin-bottom: 15px;
+        }
+        
+        .meal-card li {
+            padding: 5px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .meal-card li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        .macros {
+            background: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        .total-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        
+        .food-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .food-category {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        
+        .food-category h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .food-category p {
+            line-height: 1.8;
+        }
+        
+        .highlight-box {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        
+        .highlight-box h4 {
+            color: #856404;
+            margin-bottom: 10px;
+        }
+        
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .tip-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-top: 4px solid #667eea;
+        }
+        
+        .tip-card h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .stats-grid {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🥗 Vegetarian Muscle Building Diet Plan</h1>
+            <p>Customized for Your Goals</p>
+        </div>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>Age</h3>
+                <p>26 years</p>
+            </div>
+            <div class="stat-card">
+                <h3>Height</h3>
+                <p>6ft (183cm)</p>
+            </div>
+            <div class="stat-card">
+                <h3>Weight</h3>
+                <p>97kg</p>
+            </div>
+            <div class="stat-card">
+                <h3>Activity</h3>
+                <p>Sedentary</p>
+            </div>
+            <div class="stat-card">
+                <h3>Maintenance</h3>
+                <p>2,400 cal</p>
+            </div>
+            <div class="stat-card">
+                <h3>Target Calories</h3>
+                <p>2,800 cal</p>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <h2>📊 Daily Macronutrient Targets</h2>
+                <div class="macros-grid">
+                    <div class="macro-box">
+                        <h4>PROTEIN</h4>
+                        <p>195g</p>
+                    </div>
+                    <div class="macro-box">
+                        <h4>CARBS</h4>
+                        <p>315g</p>
+                    </div>
+                    <div class="macro-box">
+                        <h4>FATS</h4>
+                        <p>75g</p>
+                    </div>
+                    <div class="macro-box">
+                        <h4>FIBER</h4>
+                        <p>30-40g</p>
+                    </div>
+                </div>
+                
+                <div class="highlight-box">
+                    <h4>🔔 Diet Schedule</h4>
+                    <p><strong>Days with Eggs (4 days/week):</strong> Monday, Tuesday, Thursday, Saturday</p>
+                    <p><strong>Full Vegetarian Days (3 days/week):</strong> Wednesday, Friday, Sunday</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>🍳 Meal Plans</h2>
+                <div class="plan-tabs">
+                    <button class="tab-button active" onclick="showPlan('planA')">Plan A: With Eggs (4 days)</button>
+                    <button class="tab-button" onclick="showPlan('planB')">Plan B: Full Veg (3 days)</button>
+                </div>
+                
+                <div id="planA" class="tab-content active">
+                    <div class="meal-card">
+                        <h3>Meal 1: Breakfast (7:00 AM)</h3>
+                        <ul>
+                            <li>3 whole eggs + 3 egg whites scrambled</li>
+                            <li>2 slices whole grain toast with 1 tbsp peanut butter</li>
+                            <li>1 banana</li>
+                        </ul>
+                        <div class="macros">Macros: ~42g protein, 55g carbs, 20g fat</div>
+                    </div>
+                    
+                    <div class="meal-card">
+                        <h3>Meal 2: Mid-Morning Snack (10:00 AM)</h3>
+                        <ul>
+                            <li>Protein shake: 1 scoop whey protein with 1 cup milk</li>
+                            <li>40g oats (dry weight)</li>
+                            <li>1 tbsp honey</li>
+                        </ul>
+                        <div class="macros">Macros: ~35g protein, 50g carbs, 8g fat</div>
+                    </div>
+                    
+                    <div class="meal-card">
+                        <h3>Meal 3: Lunch (1:00 PM)</h3>
+                        <ul>
+                            <li>200g paneer (cottage cheese) curry</li>
+                            <li>150g cooked brown rice</li>
+                            <li>Mixed dal (lentils) - 1 cup cooked</li>
+                            <li>Spinach sabzi</li>
+                            <li>Small salad with 1 tsp olive oil</li>
+                        </ul>
+                        <div class="macros">Macros: ~45g protein, 70g carbs, 18g fat</div>
+                    </div>
+                    
+                    <div class="meal-card">
+                        <h3>Meal 4: Pre-Workout Snack (3:30 PM)</h3>
+                        <ul>
+                            <li>2 rice cakes with 1 tbsp peanut butter</li>
+                            <li>1 banana</li>
+                        </ul>
+                        <div class="macros">Macros: ~8g protein, 45g carbs, 8g fat</div>
+                    </div>
+                    
+                    <div class="meal-card">
+                        <h3>Meal 5: Post-Workout Dinner (6:30 PM)</h3>
+                        <ul>
+                            <li>Egg bhurji (3 whole eggs + 2 egg whites with vegetables)</li>
+                            <li>200g sweet potato or 150g rice</li>
+                            <li>Mixed vegetables</li>
+                            <li>Cucumber raita (yogurt)</li>
+                        </ul>
+                        <div class="macros">Macros: ~40g protein, 55g carbs, 12g fat</div>
+                    </div>
+                    
+                    <div class="meal-card">
+                        <h3>Meal 6: Evening Snack (9:00 PM)</h3>
+                        <ul>
+                            <li>150g Greek yogurt or hung curd</li>
+                            <li>20g almonds or mixed nuts</li>
+                        </ul>
+                        <div class="macros">Macros: ~20g protein, 15g carbs, 12g fat</div>
+                    </div>
+                    
+                    <div class="total-box">
+                        Daily Total: ~190g protein, 290g carbs, 78g fat = ~2,770 calories
+                    </div>
+                </div>
+                
+                <div id="planB" class="tab-content">
+                    <div class="meal-card">
+                        <h3>Meal 1: Breakfast (7:00 AM)</h3>
+                        <ul>
+                            <li>Protein smoothie: 1.5 scoops whey protein, 1 cup milk, 1 banana, 2 tbsp peanut butter, 30g oats</li>
+                            <li>2 slices whole grain toast</li>
+                        </ul>
+                        <div class="macros">Macros: ~50g protein, 65g carbs, 20g fat</div>
+                    </div>
+                    
+                    <div class="meal-card">
+                        <h3>Meal 2: Mid-Morning Snack (10:00 AM)</h3>
+                        <ul>
+                            <li>200g Greek yogurt with berries</li>
+                            <li>30g mixed nuts</li>
+                            <li>1 apple</li>
+                        </ul>
+                        <div class="macros">Macros: ~25g protein, 45g carbs, 15g fat</div>
+                    </div>
+                    
+                    <div class="meal-card">
+                        <h3>Meal 3: Lunch (1:00 PM)</h3>
+                        <ul>
+                            <li>Rajma (kidney beans) curry - 200g cooked</li>
+                            <li>150g brown rice</li>
+                            <li>150g paneer bhurji or tofu</li>
+                            <li>Spinach or mixed vegetable sabzi</li>
+                            <li>Small salad</li>
+                        </ul>
+                        <div class="macros">Macros: ~50g protein, 75g carbs, 15g fat</div>
+                    </div>
+                    
+                    <div class="meal-card">
+                        <h3>Meal 4: Pre-Workout Snack (3:30 PM)</h3>
+                        <ul>
+                            <li>Protein shake: 1 scoop whey with water</li>
+                            <li>2 bananas or 2 rice cakes with jam</li>
+                        </ul>
+                        <div class="macros">Macros: ~25g protein, 50g carbs, 2g fat</div>
+                    </div>
+                    
+                    <div class="meal-card">
+                        <h3>Meal 5: Post-Workout Dinner (6:30 PM)</h3>
+                        <ul>
+                            <li>Chana masala (chickpea curry) - 200g cooked</li>
+                            <li>150g quinoa or brown rice</li>
+                            <li>100g paneer tikka or grilled tofu</li>
+                            <li>Mixed vegetables</li>
+                        </ul>
+                        <div class="macros">Macros: ~45g protein, 65g carbs, 15g fat</div>
+                    </div>
+                    
+                    <div class="meal-card">
+                        <h3>Meal 6: Evening Snack (9:00 PM)</h3>
+                        <ul>
+                            <li>150g cottage cheese (paneer) or Greek yogurt</li>
+                            <li>1 tbsp peanut butter</li>
+                            <li>20g almonds</li>
+                        </ul>
+                        <div class="macros">Macros: ~25g protein, 12g carbs, 18g fat</div>
+                    </div>
+                    
+                    <div class="total-box">
+                        Daily Total: ~220g protein, 312g carbs, 85g fat = ~2,905 calories
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>🥘 Top Vegetarian Muscle Building Foods</h2>
+                <div class="food-list">
+                    <div class="food-category">
+                        <h4>Protein Sources (with eggs)</h4>
+                        <p>Eggs, paneer, Greek yogurt, cottage cheese, whey protein powder, tofu, tempeh</p>
+                    </div>
+                    <div class="food-category">
+                        <h4>Protein Sources (without eggs)</h4>
+                        <p>Paneer, Greek yogurt, dal (lentils), rajma (kidney beans), chana (chickpeas), tofu, tempeh, soya chunks, protein powder</p>
+                    </div>
+                    <div class="food-category">
+                        <h4>Complex Carbs</h4>
+                        <p>Brown rice, quinoa, oats, sweet potatoes, whole wheat roti, whole grain bread, millets</p>
+                    </div>
+                    <div class="food-category">
+                        <h4>Healthy Fats</h4>
+                        <p>Paneer, nuts (almonds, walnuts, cashews), seeds (chia, flax, pumpkin), ghee, olive oil, peanut butter, avocado</p>
+                    </div>
+                    <div class="food-category">
+                        <h4>Vegetables</h4>
+                        <p>Spinach, broccoli, bell peppers, mushrooms, cauliflower, green beans, carrots</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>💊 Supplements & Hydration</h2>
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <h4>Essential Supplements</h4>
+                        <p>• Whey protein powder (2-3 scoops daily)<br>
+                        • Creatine monohydrate (5g daily)<br>
+                        • Vitamin B12 (1000mcg weekly)<br>
+                        • Vitamin D (get tested first)<br>
+                        • Omega-3 (algae-based or flaxseeds)</p>
+                    </div>
+                    <div class="tip-card">
+                        <h4>Hydration</h4>
+                        <p>• Drink 3-4 liters of water daily<br>
+                        • More water on workout days<br>
+                        • Monitor urine color (should be pale yellow)<br>
+                        • Drink water with each meal</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>⚠️ Important Notes</h2>
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <h4>Training is Essential</h4>
+                        <p>You MUST start resistance training 3-5x per week. Without training, extra calories become fat, not muscle. Focus on compound movements: squats, deadlifts, bench press, rows, overhead press.</p>
+                    </div>
+                    <div class="tip-card">
+                        <h4>Progress Tracking</h4>
+                        <p>• Weigh yourself weekly (same time)<br>
+                        • Target: 0.25-0.5kg weight gain per week<br>
+                        • Track protein intake daily<br>
+                        • Adjust calories if needed after 2 weeks</p>
+                    </div>
+                    <div class="tip-card">
+                        <h4>Meal Prep Tips</h4>
+                        <p>• Cook dal/rajma/chana in bulk<br>
+                        • Boil eggs in advance<br>
+                        • Keep paneer and yogurt stocked<br>
+                        • Pre-portion nuts and protein powder</p>
+                    </div>
+                    <div class="tip-card">
+                        <h4>Sleep & Recovery</h4>
+                        <p>Get 7-9 hours of quality sleep nightly. Poor sleep significantly impairs muscle protein synthesis and recovery.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function showPlan(planId) {
+            // Hide all tab contents
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+            
+            // Remove active class from all buttons
+            const buttons = document.querySelectorAll('.tab-button');
+            buttons.forEach(button => button.classList.remove('active'));
+            
+            // Show selected tab content
+            document.getElementById(planId).classList.add('active');
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
